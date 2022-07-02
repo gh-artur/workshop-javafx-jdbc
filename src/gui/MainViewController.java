@@ -33,7 +33,7 @@ public class MainViewController implements Initializable{
 	}
 	@FXML
 	public void onMenuItemDepartamentoAction() {
-		System.out.println("onMenuItemDepartamentoAction");
+		loadView("/gui/DepartmentList.fxml");
 	}
 	@FXML
 	public void onMenuItemAboutAction() {
@@ -42,16 +42,12 @@ public class MainViewController implements Initializable{
 	
 		
 	@Override
-	public void initialize(URL uri, ResourceBundle rb) {
-		// TODO Auto-generated method stub
-		
-	}
+	public void initialize(URL uri, ResourceBundle rb) {}
 	
-	private synchronized void loadView(String absoluteName) {
+	private void loadView(String absoluteName) {
 		
 		try {
 			
-		//	
 		FXMLLoader loader = new FXMLLoader(getClass().getResource(absoluteName));
 		VBox newVBox = loader.load();
 		
@@ -60,11 +56,8 @@ public class MainViewController implements Initializable{
 		
 		Node mainMenu = mainVBox.getChildren().get(0);
 		mainVBox.getChildren().clear();
-		
 		mainVBox.getChildren().add(mainMenu);
-		mainVBox.getChildren().addAll(newVBox.getChildren());
-		
-			
+		mainVBox.getChildren().addAll(newVBox.getChildren());			
 		}
 		catch(IOException e){
 			Alerts.showAlert("IOException", "Deu erro...", e.getMessage(), AlertType.ERROR);
