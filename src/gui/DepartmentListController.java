@@ -35,20 +35,14 @@ public class DepartmentListController implements Initializable{
 	
 	private ObservableList<Department> obsList;
 	
-	
-	
 	@FXML
 	private void onBtNewAction() {
 		System.out.println("onBtNewAction");
 	}
 	
-	
-
 	@Override
 	public void initialize(URL url, ResourceBundle rb) {
-		
 		initializeNodes();
-		
 	}
 
 	private void initializeNodes() {
@@ -69,7 +63,6 @@ public class DepartmentListController implements Initializable{
 		tableViewDepartment.setItems(obsList);
 		
 	}
-	
 	
 	public void setDepartmentService(DepartmentService service) {
 		this.service = service;
