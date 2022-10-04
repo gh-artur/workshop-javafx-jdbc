@@ -1,2 +1,1 @@
-# workshop-javafx-jdbc
-Projeto de estudo do professor Nélio Alves
+# PROJETO NÃO FINALIZADO
